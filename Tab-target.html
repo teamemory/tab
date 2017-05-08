@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Tab-JS</title>
+    <style>
+        /*外围框的属性*/
+        .container{
+            width: 40%;
+            height: 30%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .container div{
+            height: 100px;
+            border: 1px solid #dddddd;
+        }
+        ul{
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+
+        }
+        ul li{
+            float: left;
+            list-style: none;
+            width: 50%;
+            text-align: center;
+            background-color: #dddddd;
+            height: 40px;
+            line-height: 40px;
+        }
+        /*隐藏main2的内容*/
+        .main2{
+            display: none;
+        }
+        /*给标题1加背景颜色*/
+        .title1{
+            background-color: #FF7300;
+        }
+        /*取消a的默认属性*/
+        a{
+            text-decoration: none;
+            color: black;
+            display: block;
+        }
+        /*点击出现*/
+        #main2:target,#main1:target{
+            display: block;
+        }
+        /*默认隐藏而且将div相对定位*/
+        #main2,#main1{
+            display: none;
+            position: absolute;
+            top:48px;
+            width: 39.4%;
+
+        }
+        /*颜色切换*/
+        #main2:target~ul li.title2{
+            background-color:#FF7300 ;
+        }
+        #main2:target~ul li.title1{
+            background-color:#ddd ;
+        }
+        #main1:target~ul li.title1{
+            background-color:#FF7300;
+        }
+        #main1:target~ul li.title2{
+            background-color:#ddd ;
+        }
+        /*边框*/
+        .tshu{
+            position: absolute;
+            top:48px;
+            border: 1px solid #dddddd;
+            width: 39.4%;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- 两个详细内容-->
+    <div class="main1" id="main1">
+        2017年万事顺意!
+    </div>
+    <div class="main2" id="main2">
+        开心快乐每一天！
+    </div>
+    <!-- 切换标题-->
+    <ul>
+        <li class="title1"><a href="#main1">标题1</a></li>
+        <li class="title2"><a href="#main2">标题2</a></li>
+    </ul>
+    <div class="tshu">
+    </div>
+</div>
+
+</body>
+</html>

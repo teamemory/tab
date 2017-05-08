@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Tab-JS</title>
+    <style>
+        /*外围框的属性*/
+        .container{
+            width: 40%;
+            height: 30%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .container div{
+            height: 100px;
+            border: 1px solid #dddddd;
+        }
+        ul{
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+        }
+        ul li{
+            float: left;
+            list-style: none;
+            width: 50%;
+            text-align: center;
+            background-color: #dddddd;
+            height: 40px;
+            line-height: 40px;
+        }
+        /*隐藏main2的内容*/
+        .main2{
+            display: none;
+        }
+        /*给标题1加背景颜色*/
+        .title1{
+            background-color: #FF7300;
+        }
+        /*label快级元素*/
+        label{
+            width: 100%;
+            display: block;
+        }
+        /*鼠标点击2*/
+        #title2:checked~ul li.title2{
+            background-color: #FF7300;
+        }
+        #title2:checked~ul li.title1{
+            background-color: #dddddd;
+        }
+        #title2:checked~.main2{
+            display: block;
+        }
+        #title2:checked~.main1{
+            display: none;
+        }
+        /*鼠标点击1*/
+        #title1:checked~ul li.title1{
+            background-color: #FF7300;
+        }
+        #title1:checked~ul li.title2{
+            background-color: #dddddd;
+        }
+        #title1:checked~.main1{
+            display: block;
+        }
+        #title1:checked~.main2{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <input type="radio" id="title1" name="title" style="display: none"/>
+    <input type="radio" id="title2" name="title" style="display: none"/>
+    <!-- 切换标题-->
+    <ul>
+        <li class="title1"><label for="title1">标题1</label></li>
+        <li class="title2"><label for="title2">标题2</label></li>
+    </ul>
+    <!-- 两个详细内容-->
+    <div class="main1">
+        2017年万事顺意!
+    </div>
+    <div class="main2">
+        开心快乐每一天！
+    </div>
+</div>
+
+</body>
+</html>

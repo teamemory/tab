@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Tab-JS</title>
+    <style>
+       /*外围框的属性*/
+        .container{
+            width: 40%;
+            height: 30%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+       .container div{
+           height: 100px;
+           border: 1px solid #dddddd;
+       }
+        ul{
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+        }
+        ul li{
+            float: left;
+            list-style: none;
+            width: 50%;
+            text-align: center;
+            background-color: #dddddd;
+            height: 40px;
+            line-height: 40px;
+        }
+        /*隐藏main2的内容*/
+        .main2{
+            display: none;
+        }
+        /*给标题1加背景颜色*/
+        .title1{
+            background-color: #FF7300;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 切换标题-->
+        <ul>
+            <li class="title1">标题1</li>
+            <li class="title2">标题2</li>
+        </ul>
+        <!-- 两个详细内容-->
+        <div class="main1">
+            2017年万事顺意!
+        </div>
+        <div class="main2">
+            开心快乐每一天！
+        </div>
+    </div>
+    <script src="jquery-1.11.3.js"></script>
+    <script>
+        <!-- 点击标题2-->
+        $('.title2').on('mouseenter', function () {
+            $('.title2').css('background','#FF7300');
+            $('.title1').css('background','#ddd');
+            $('.main2').css('display','block');
+            $('.main1').css('display','none');
+        })
+        <!-- 点击标题1-->
+        $('.title1').on('mouseenter', function () {
+            $('.title2').css('background','#ddd');
+            $('.title1').css('background','#FF7300');
+            $('.main2').css('display','none');
+            $('.main1').css('display','block');
+        })
+    </script>
+</body>
+</html>
